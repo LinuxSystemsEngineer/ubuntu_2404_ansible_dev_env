@@ -1,7 +1,7 @@
 # Ubuntu 24.04 LTS Setup with Ansible
 
 ## Overview
-This project automates the setup of an Ubuntu 24.04 LTS system using Ansible. It includes tasks such as installing apt packages, creating directories, configuring user environments, and more. The playbook calls the `main.yml` file, which calls multiple tasks in the `./tasks` directory.
+This project automates the setup of an Ubuntu 24.04 LTS system using Ansible. It includes tasks such as installing apt packages, creating directories, configuring user environments, and more. The playbook calls the `main.yml` file, and then calls multiple tasks in the `./tasks` directory.
 
 ## Requirements
 - python3
