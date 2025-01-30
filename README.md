@@ -116,16 +116,6 @@ Let's say your remote client machine's IP address is `10.0.0.20`. Your `./hosts`
 ubuntu_test_server ansible_host=10.0.0.20
 ```
 
-## Usage
-
-1. **Run the Ansible playbook:**
-
-    ```bash
-    ansible-playbook main.yml -K
-    ```
-
-    You will be prompted for your sudo password.
-
 ## Ansible Linting
 
 This project emphasizes code quality and maintainability through the use of `ansible-lint`. `ansible-lint` is a powerful tool that analyzes your ansible playbooks and roles, checking for best practices, common errors, and potential improvements. It helps ensure that your ansible code is consistent, reliable, and easy to understand.
@@ -147,6 +137,18 @@ After meeting the prerequisites, you can run the linter against your playbooks. 
     ```bash
     ansible-lint main.yml
     ```
+
+
+## Usage
+
+1. **Run the Ansible playbook:**
+
+    ```bash
+    ansible-playbook main.yml -K
+    ```
+
+    You will be prompted for your sudo password.
+
 
 ## Playbook Structure
 - `main.yml`: The main playbook that sets up the server.
