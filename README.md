@@ -10,7 +10,7 @@ This project automates the setup of an Ubuntu 24.04 LTS system using Ansible. It
 ## Prerequisites
 This document assumes you already have SSH keys installed and configured for your (localhost server and remote client machine). You should also have an isolated python environment installed and activated with the `requirements.txt` `pip` packages installed.
 
-## Requirements.txt File Contents
+## Requirements.txt file contents
 
 The `requirements.txt` file for this project includes the `ansible-dev-tools` package. This convenient package bundles a suite of essential tools for Ansible development, streamlining the setup process and providing a comprehensive environment for working with Ansible.
 
@@ -37,7 +37,7 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
     git clone https://github.com/LinuxSystemsEngineer/ubuntu-2404-ansible-dev-env.git
     ```
 
-2. **Change directories to the newly cloned GitHub repository:**
+2. **Change directories to the newly cloned github repository:**
 
     ```bash
     cd ubuntu-2404-ansible-dev-env
@@ -49,13 +49,13 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
     sudo apt update && sudo apt install python3 python3-dev python3-venv -y
     ```
 
-4. **Create an isolated Python virtual environment:**
+4. **Create an isolated python virtual environment:**
 
     ```bash
     python3 -m venv .venv
     ```
 
-5. **Activate the newly created Python virtual environment:**
+5. **Activate the newly created python virtual environment:**
 
     ```bash
     . .venv/bin/activate
@@ -67,7 +67,7 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
     pip3 install -r requirements.txt
     ```
 
-## Configuring the Hosts File
+## Configuring the ./hosts file
 
 The `./hosts` file is crucial for ansible to connect to your target servers.  Before running the playbook, you *must* configure this file to reflect the IP address of your remote client machine.
 
@@ -92,7 +92,7 @@ The `./hosts` file is crucial for ansible to connect to your target servers.  Be
 
 4.  **Save the changes:** Save the `hosts` file after making the necessary changes.
 
-5.  **Test your changes and ensure the ansible ping pong test works:**  Run this command:
+5.  **Test your changes and ensure the ansible ping test works:**  Run this command:
 
     ```bash
     ansible staging_servers -m ping
@@ -116,13 +116,13 @@ Let's say your remote client machine's IP address is `10.0.0.20`. Your `./hosts`
 ubuntu_test_server ansible_host=10.0.0.20
 ```
 
-## Ansible Linting and Idempotency
+## Ansible linting and idempotency
 
 This project emphasizes code quality, maintainability, and predictable execution through the use of `ansible-lint` and adherence to idempotent principles.
 
 `ansible-lint` is a powerful tool that analyzes your ansible playbooks and roles, checking for best practices, common errors, and potential improvements. It helps ensure that your Ansible code is consistent, reliable, and easy to understand.
 
-**Idempotency in Ansible:**
+**Idempotency in ansible:**
 
 A key concept in ansible is *idempotency*.  An operation is idempotent if it can be performed multiple times without changing the result beyond its initial application.  In simpler terms, if you run an ansible playbook multiple times, it should have the same effect as running it once.  This is crucial for ensuring consistent and stable infrastructure management.
 
@@ -140,11 +140,11 @@ This playbook is designed with idempotency in mind.  Tasks are written to check 
 
 Before you can use `ansible-lint`, ensure the following prerequisites are met:
 
-1.  **Python Virtual Environment:** A python virtual environment must be created and activated. This isolates the project's dependencies and prevents conflicts with system wide packages. Instructions for creating and activating a virtual environment are provided in the Installation section of this README.
+1.  **Python virtual environment:** A python virtual environment must be created and activated. This isolates the project's dependencies and prevents conflicts with system wide packages. Instructions for creating and activating a virtual environment are provided in the Installation section of this README.
 
-2.  **Install Requirements:** The `requirements.txt` file, containing the necessary python packages (including `ansible-dev-tools`), must be installed using `pip`. This ensures that `ansible-lint` and its dependencies are available within the active virtual environment. The installation steps are detailed in the Installation section.
+2.  **Install requirements:** The `requirements.txt` file, containing the necessary python packages (including `ansible-dev-tools`), must be installed using `pip`. This ensures that `ansible-lint` and its dependencies are available within the active virtual environment. The installation steps are detailed in the Installation section.
 
-**How to Run Ansible Lint:**
+**How to run ansible lint:**
 
 After meeting the prerequisites, you can run the linter against your playbooks. From the main directory of your ansible project (where your `main.yml` file is located), execute the following command:
 
@@ -158,7 +158,7 @@ After meeting the prerequisites, you can run the linter against your playbooks. 
 
 ## Usage
 
-1. **Run the Ansible playbook:**
+1. **Run the ansible playbook:**
 
     ```bash
     ansible-playbook main.yml -K
@@ -167,7 +167,7 @@ After meeting the prerequisites, you can run the linter against your playbooks. 
     You will be prompted for your sudo password.
 
 
-## Playbook Structure
+## Playbook structure
 - `main.yml`: The main playbook that sets up the server.
 - `./tasks`: Directory containing task files.
 
@@ -179,9 +179,9 @@ After meeting the prerequisites, you can run the linter against your playbooks. 
 - Customize `.bashrc` with terminal colors, environment variable paths (including `$DEV`), and increased CLI history size. These customizations are applied to the local user, root user, and the `/etc/skel` directory.
 - Customize `.vimrc` with color schemes. These customizations are applied to the local user, root user, and the `/etc/skel` directory.
 
-**Important Note about User Environment Customization:** This playbook configures `.bashrc` and `.vimrc` files for the local user, root user, and also within the `/etc/skel` directory. `/etc/skel` is a special directory that contains template files for new user accounts. With placing customized `.bashrc` and `.vimrc` files in `/etc/skel`, *any new user created on the system after the playbook runs will automatically inherit these customizations*. This ensures a consistent and personalized environment for all users, including custom pathing, vim colors, and increased history size.
+**Important note about user environment customization:** This playbook configures `.bashrc` and `.vimrc` files for the local user, root user, and also within the `/etc/skel` directory. `/etc/skel` is a special directory that contains template files for new user accounts. With placing customized `.bashrc` and `.vimrc` files in `/etc/skel`, *any new user created on the system after the playbook runs will automatically inherit these customizations*. This ensures a consistent and personalized environment for all users, including custom pathing, vim colors, and increased history size.
 
-## Development Directory Structure and Environment Variable
+## Development directory structure and environment variable
 
 This playbook creates a structured development directory at `~/devops`. This organized structure provides a reserved space for various projects and tools, making it easier to manage and navigate your development work.  The following subdirectories are created:
 
@@ -198,17 +198,17 @@ This playbook creates a structured development directory at `~/devops`. This org
 
 To quickly access this main development directory, the playbook also sets the environment variable `$DEV` to `~/devops`.  This allows you to simply type `cd $DEV` in your terminal to navigate directly to your development workspace, saving time and effort.
 
-## Installed Packages and Their Purposes
+## Installed packages and their purposes
 
 The following packages are installed by the playbook to provide a well-rounded development and system administration environment:
 
-* **Development Tools:** `build-essential`, `git`, `golang-go`, `golang-src`
-* **System Utilities:** `bzip2`, `curl`, `dnsutils`, `dstat`, `etckeeper`, `info`, `locate`, `lshw`, `lsof`, `mtr`, `net-tools`, `nethogs`, `nload`, `nmap`, `plocate`, `screen`, `sysstat`, `systemd-timesyncd`, `tcpdump`, `tmux`, `traceroute`, `tree`, `ufw`, `unzip`, `vim`, `wget`, `whois`, `xz-utils`, `zip`
+* **Development tools:** `build-essential`, `git`, `golang-go`, `golang-src`
+* **System utilities:** `bzip2`, `curl`, `dnsutils`, `dstat`, `etckeeper`, `info`, `locate`, `lshw`, `lsof`, `mtr`, `net-tools`, `nethogs`, `nload`, `nmap`, `plocate`, `screen`, `sysstat`, `systemd-timesyncd`, `tcpdump`, `tmux`, `traceroute`, `tree`, `ufw`, `unzip`, `vim`, `wget`, `whois`, `xz-utils`, `zip`
 * **Multimedia:** `ffmpeg`, `imagemagick`
 * **Monitoring:** `htop`, `iftop`, `iotop`, `iptables`, `iptraf-ng`, `iputils-tracepath`
 * **Networking:** `openssh-client`
-* **Document Conversion:** `pandoc`
-* **Python Development:** `python3`, `python3-dev`, `python3-venv`
+* **Document conversion:** `pandoc`
+* **Python development:** `python3`, `python3-dev`, `python3-venv`
 
 This selection of packages is designed to provide a comprehensive toolkit for various tasks, ranging from software development, system administration, network engineering, and performance monitoring.
 
