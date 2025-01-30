@@ -34,13 +34,13 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/LinuxSystemsEngineer/ubuntu-2404-ansible-dev-env.git
+    git clone https://github.com/LinuxSystemsEngineer/ubuntu_2404_ansible_dev_env.git
     ```
 
 2. **Change directories to the newly cloned github repository:**
 
     ```bash
-    cd ubuntu-2404-ansible-dev-env
+    cd ubuntu_2404_ansible_dev_env
     ```
 
 3. **Install the required packages:**
