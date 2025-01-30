@@ -1,0 +1,12 @@
+---
+- name: Ensure the localhost /etc/skel/.vimrc file is present with specific contents
+  become: true
+  ansible.builtin.copy:
+    dest: /etc/skel/.vimrc
+    content: |
+      syntax on
+      set background=dark
+      colorscheme ron
+    owner: root
+    group: root
+    mode: '0644'

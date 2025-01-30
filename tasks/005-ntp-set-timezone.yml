@@ -1,0 +1,20 @@
+---
+- name: Ensure the correct timezone is set
+  become: true
+  ansible.builtin.command:
+    cmd: timedatectl set-timezone America/Chicago
+  changed_when: false
+
+- name: Ensure systemctl unmask the systemd-timesync service
+  become: true
+  ansible.builtin.shell: |
+    bash -l -c "systemctl unmask systemd-timesyncd.service"
+  args:
+    executable: /bin/bash
+  changed_when: false
+
+- name: Set timedatectl ntp to true
+  become: true
+  ansible.builtin.command:
+    cmd: timedatectl set-ntp true
+  changed_when: false

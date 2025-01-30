@@ -1,0 +1,34 @@
+---
+- name: Main play for setting up the server
+  hosts: ubuntu_test_server
+  tasks:
+    - name: Debug message
+      ansible.builtin.debug:
+        msg: running main playbook
+
+    - name: Include the apt packages tasks
+      ansible.builtin.import_tasks: ./tasks/000-apt-packages.yml
+
+    - name: Include the local users bashrc file tasks
+      ansible.builtin.import_tasks: ./tasks/001-local-user-bashrc.yml
+
+    - name: Include the local user vimrc file tasks
+      ansible.builtin.import_tasks: ./tasks/002-local-user-vimrc.yml
+
+    - name: Include the /etc/skel/.bashrc tasks
+      ansible.builtin.import_tasks: ./tasks/003-etc-skel-new-user-bashrc.yml
+
+    - name: Include the /etc/skel/.vimrc file tasks
+      ansible.builtin.import_tasks: ./tasks/004-etc-skel-new-user-vimrc.yml
+
+    - name: Include the ntp set timezone tasks
+      ansible.builtin.import_tasks: ./tasks/005-ntp-set-timezone.yml
+
+    - name: Include the root .bashrc file tasks
+      ansible.builtin.import_tasks: ./tasks/006-root-user-bashrc.yml
+
+    - name: Include the root .vimrc file tasks
+      ansible.builtin.import_tasks: ./tasks/007-root-user-vimrc.yml
+
+    - name: Include the add local user to sudoers tasks
+      ansible.builtin.import_tasks: ./tasks/008-local-user-sudoers.yml

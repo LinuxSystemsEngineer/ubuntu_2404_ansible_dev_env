@@ -1,0 +1,86 @@
+---
+- name: Ensure correct file permissions on /etc/skel/.bashrc before modification
+  become: true
+  ansible.builtin.file:
+    path: /etc/skel/.bashrc
+    owner: root
+    group: root
+    mode: '0644'
+  when: ansible_facts.files['/etc/skel/.bashrc'] is defined
+
+- name: Ensure /etc/skel/.bashrc file ends with the correct block
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/skel/.bashrc
+    owner: root
+    group: root
+    mode: '0644'
+    block: |
+
+      # HISTSIZE AND HISTFILESIZE
+      HISTSIZE=9999
+      HISTFILESIZE=9999
+
+      # LINUX COLOR TERMINAL
+      PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+
+      # LESS COLORS FOR MAN PAGES
+      export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
+      export LESS_TERMCAP_md=$'\E[01;35m' # begin bold
+      export LESS_TERMCAP_me=$'\E[0m' # end mode
+      export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
+      export LESS_TERMCAP_so=$'\E[01;33m' # begin standout-mode - info box
+      export LESS_TERMCAP_ue=$'\E[0m' # end underline
+      export LESS_TERMCAP_us=$'\E[04;36m' # begin underline
+      export GROFF_NO_SGR=1 # for konsole and gnome-terminal
+
+      # EXPORT GREP COLOR TO PURPLE
+      export GREP_COLORS='ms=01;35:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36'
+
+      # AUTOMATICALLY CREATE DIRS FOR DEVOPS AND PROGRAMMING
+      directories=(
+        "$HOME/devops/ansible"
+        "$HOME/devops/databases"
+        "$HOME/devops/databases/mysql"
+        "$HOME/devops/databases/sqlite"
+        "$HOME/devops/databases/postgresql"
+        "$HOME/devops/databases/mongodb"
+        "$HOME/devops/databases/redis"
+        "$HOME/devops/docker"
+        "$HOME/devops/documentation"
+        "$HOME/devops/documentation/resume"
+        "$HOME/devops/git"
+        "$HOME/devops/kubernetes"
+        "$HOME/devops/libvirt"
+        "$HOME/devops/podman"
+        "$HOME/devops/programming"
+        "$HOME/devops/programming/bash"
+        "$HOME/devops/programming/c"
+        "$HOME/devops/programming/go"
+        "$HOME/devops/programming/java"
+        "$HOME/devops/programming/python"
+        "$HOME/devops/webdev"
+        "$HOME/devops/webdev/django"
+        "$HOME/devops/webdev/w3schools"
+        "$HOME/devops/webdev/www"
+      )
+
+      for dir in "${directories[@]}"; do
+        if [ ! -d "$dir" ]; then
+          mkdir -p "$dir"
+        fi
+      done
+
+      # PATH ENVIRONMENT VARIABLES
+      DEV=~/devops/
+
+    create: true
+    state: present
+
+- name: Ensure correct file permissions on /etc/skel/.bashrc after modification
+  become: true
+  ansible.builtin.file:
+    path: /etc/skel/.bashrc
+    owner: root
+    group: root
+    mode: '0644'
