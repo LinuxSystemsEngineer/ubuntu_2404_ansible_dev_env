@@ -34,7 +34,7 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
 1. **Clone the repository:**
 
     ```bash
-    git clone [[https://github.com/YourUsername/ansible_ubuntu_setup.git](https://github.com/YourUsername/ansible_ubuntu_setup.git)](https://github.com/LinuxSystemsEngineer/ubuntu-2404-ansible-dev-env.git)
+    git clone https://github.com/LinuxSystemsEngineer/ubuntu-2404-ansible-dev-env.git
     ```
 
 2. **Change directories to the newly cloned GitHub repository:**
