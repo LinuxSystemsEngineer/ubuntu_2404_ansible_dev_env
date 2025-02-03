@@ -215,7 +215,7 @@ This selection of packages is designed to provide a comprehensive toolkit for va
 ## Programmer
  **Blake Jones** built this project. For any questions or further information, please contact me on LinkedIn.
 
-* https://www.linkedin.com/in/your-linkedin-profile/
+* https://www.linkedin.com/in/blake-jones-linux
 
 ## Contributions
 Feel free to fork this project and submit pull requests. For significant changes, please open an issue first to discuss what you would like to change.
