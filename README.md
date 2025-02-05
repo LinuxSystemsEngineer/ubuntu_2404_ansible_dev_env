@@ -34,7 +34,7 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
 
 ## Installation
 
-1 **Install the required apt packages:**
+1. **Install the required apt packages:**
 
     ```bash
     sudo apt update && sudo apt install git python3 python3-dev python3-venv vim -y
