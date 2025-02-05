@@ -4,11 +4,14 @@
 This project automates the setup of an Ubuntu 24.04 LTS system using Ansible. It includes tasks such as installing apt packages, creating directories, configuring user environments, and more. The playbook calls the `main.yml` file, and then calls multiple tasks in the `./tasks` directory.
 
 ## Requirements
+- git
 - python3
 - pip3
+- vim
 
 ## Prerequisites
-This document assumes you already have SSH keys installed and configured for your (localhost server and remote client machine). You should also have an isolated python environment installed and activated with the `requirements.txt` `pip` packages installed.
+This document assumes you already have SSH keys installed and configured for your (localhost server and remote client machine). You should also have an isolated python environment installed and activated with the `requirements.txt` `pip` packages installed. **Additionally, this document assumes you have a user named `superadmin` on your localhost machine. If your username is different, please adjust the files under the `./tasks` directory accordingly.**
+
 
 ## Requirements.txt file contents
 
