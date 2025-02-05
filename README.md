@@ -31,22 +31,22 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
 
 ## Installation
 
-1. **Clone the repository:**
+1 **Install the required apt packages:**
+
+    ```bash
+    sudo apt update && sudo apt install git python3 python3-dev python3-venv vim -y
+    ```
+
+2. **Clone the repository:**
 
     ```bash
     git clone https://github.com/LinuxSystemsEngineer/ubuntu_2404_ansible_dev_env.git
     ```
 
-2. **Change directories to the newly cloned github repository:**
+3. **Change directories to the newly cloned github repository:**
 
     ```bash
     cd ubuntu_2404_ansible_dev_env
-    ```
-
-3. **Install the required packages:**
-
-    ```bash
-    sudo apt update && sudo apt install python3 python3-dev python3-venv -y
     ```
 
 4. **Create an isolated python virtual environment:**
@@ -61,7 +61,7 @@ With including `ansible-dev-tools` in `requirements.txt`, this project ensures t
     . .venv/bin/activate
     ```
 
-6. **Install required packages from the `requirements.txt` file:**
+6. **Install required pip packages from the `requirements.txt` file:**
 
     ```bash
     pip3 install -r requirements.txt
@@ -78,7 +78,6 @@ The `./hosts` file is crucial for ansible to connect to your target servers.  Be
     ```bash
     vim ./hosts
     ```
-
 
 3.  **Add or modify the server entry:**  You'll see a section like this (or similar):
 
