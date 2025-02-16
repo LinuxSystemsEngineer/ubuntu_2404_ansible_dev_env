@@ -1,7 +1,7 @@
 # Ubuntu Linux Setup with Ansible
 
 ## Overview
-This project automates the setup of a Ubuntu 24.04 LTS system using Ansible. It includes tasks such as installing dnf packages, creating directories, configuring user environments, and more. The playbook, called the `main.yml` file, runs multiple tasks in the `./tasks` directory.
+This project automates the setup of a Ubuntu 24.04 LTS system using Ansible. It includes tasks such as installing apt packages, creating directories, configuring user environments, and more. The playbook, called the `main.yml` file, runs multiple tasks in the `./tasks` directory.
 
 ## Requirements
 - git
@@ -32,7 +32,7 @@ Including `ansible-dev-tools` in `requirements.txt` ensures that all necessary t
 
 ## Installation
 
-1. **Install the required dnf packages:**
+1. **Install the required apt packages:**
 
     ```bash
     sudo apt update && sudo apt install git python3 python3-dev python3-venv -y
