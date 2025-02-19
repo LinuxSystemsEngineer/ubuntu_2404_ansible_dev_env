@@ -1,11 +1,11 @@
 ---
 - name: Ensure the localhost vimrc file is present with specific contents
   ansible.builtin.copy:
-    dest: /home/superadmin/.vimrc
+    dest: /home/local_account_name/.vimrc
     content: |
       syntax on
       set background=dark
       colorscheme ron
-    owner: superadmin
-    group: superadmin
+    owner: local_account_name
+    group: local_account_name
     mode: '0644'
