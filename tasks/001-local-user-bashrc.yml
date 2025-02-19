@@ -1,17 +1,17 @@
 ---
-- name: Ensure correct file permissions on /home/superadmin/.bashrc before modification
+- name: Ensure correct file permissions on /home/local_account_name/.bashrc before modification
   ansible.builtin.file:
-    path: /home/superadmin/.bashrc
-    owner: superadmin
-    group: superadmin
+    path: /home/local_account_name/.bashrc
+    owner: local_account_name
+    group: local_account_name
     mode: '0644'
-  when: ansible_facts.files['/home/superadmin/.bashrc'] is defined
+  when: ansible_facts.files['/home/local_account_name/.bashrc'] is defined
 
 - name: Ensure bashrc file ends with the correct block
   ansible.builtin.blockinfile:
-    path: /home/superadmin/.bashrc
-    owner: superadmin
-    group: superadmin
+    path: /home/local_account_name/.bashrc
+    owner: local_account_name
+    group: local_account_name
     mode: '0644'
     block: |
 
@@ -77,7 +77,7 @@
 
 - name: Ensure correct file permissions on .bashrc after modification
   ansible.builtin.file:
-    path: /home/superadmin/.bashrc
-    owner: superadmin
-    group: superadmin
+    path: /home/local_account_name/.bashrc
+    owner: local_account_name
+    group: local_account_name
     mode: '0644'
