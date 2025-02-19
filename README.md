@@ -46,13 +46,13 @@ With including `ansible-dev-tools` in `requirements.txt,` this project ensures t
 2. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/LinuxSystemsEngineer/ubuntu_2404_ansible_dev_env.git
+    git clone https://github.com/LinuxSystemsEngineer/ubuntu_2404_ansible.git
     ```
 
 3. **Change directories to the newly cloned GitHub repository:**
 
     ```bash
-    cd ubuntu_2404_ansible_dev_env
+    cd ubuntu_2404_ansible
     ```
 
 4. **Create a segmented Python virtual environment:**
