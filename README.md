@@ -112,7 +112,7 @@ The `./hosts` file is crucial for Ansible to connect to your target servers. Bef
 
 ## Ansible linting and idempotency
 
-This project emphasizes code quality, maintainability, and predictable execution through `ansible-lint` and adherence to idempotent principles.
+This project emphasizes code quality, maintainability, and expected code sequence, selection, and reptition through `ansible-lint` and adherence to idempotent principles.
 
 `ansible-lint` is a powerful tool that analyzes your ansible playbooks and roles, checking for best practices, standard errors, and potential improvements. It helps ensure that your Ansible code is consistent, reliable, and easy to understand.
 
