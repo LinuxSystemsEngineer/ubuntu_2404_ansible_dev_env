@@ -21,7 +21,7 @@ This project's `requirements.txt` file includes the `ansible-dev-tools` package.
 
 The `ansible-dev-tools` package includes the following tools:
 
-*   **Ansible-builder:** Automates creating execution environments for Ansible Collections.
+*   **ansible-builder:** Automates creating execution environments for Ansible Collections.
 *   **ansible-core:** The core Ansible automation engine, enabling infrastructure automation and management.
 *   **ansible-creator:** A tool for quickly generating Ansible content (collections, roles, etc.).
 *   **ansible-dev-environment:** Simplifies the installation of Ansible Collections and their dependencies.
