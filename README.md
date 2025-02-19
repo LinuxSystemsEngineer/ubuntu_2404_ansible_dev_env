@@ -114,7 +114,7 @@ The `./hosts` file is crucial for Ansible to connect to your target servers. Bef
 
 This project emphasizes code quality, maintainability, and expected code sequence, selection, and reptition through `ansible-lint` and adherence to idempotent principles.
 
-`ansible-lint` is a powerful tool that analyzes your ansible playbooks and roles, checking for best practices, standard errors, and potential improvements. It helps ensure that your Ansible code is consistent, reliable, and easy to understand.
+`ansible-lint` is a powerful tool that reviews your ansible playbooks and roles, checking for best practices, standard errors, and potential improvements. It helps ensure that your Ansible code is consistent, reliable, and easy to understand.
 
 **Idempotency in Ansible:**
 
@@ -132,7 +132,7 @@ This playbook is designed with idempotency in mind.  Tasks are written to check 
 
 **Requirements for using ansible-lint:**
 
-Before you can use `ansible-lint`, ensure the following prerequisites are met:
+Before you can use `ansible-lint`, ensure the following requiements are met:
 
 1.  **Python virtual environment:** A Python virtual environment must be created and activated. This segments the project's dependencies and prevents conflicts with system-wide packages. Instructions for creating and activating a virtual environment are provided in the Installation section of this README.
 
@@ -140,7 +140,7 @@ Before you can use `ansible-lint`, ensure the following prerequisites are met:
 
 **How to run ansible lint:**
 
-After meeting the prerequisites, you can run the linter against your playbooks. From the main directory of your ansible project (where your `main.yml` file is located), execute the following command:
+After meeting the requirements, you can run the linter against your playbooks. From the main directory of your ansible project (where your `main.yml` file is located), execute the following command:
 
 
 1. **Run ansible lint:**
