@@ -192,13 +192,9 @@ This playbook creates a structured development directory at `~/devops`. This org
 
 To access this main development directory quickly, the playbook also sets the environment variable `$DEV` to `~/devops`. This allows you to type `cd $DEV` in your terminal to navigate directly to your development workspace, saving time and effort.
 
-## Installed packages and their purposes
+## Linux Packages
 
-The playbook installs the following packages to provide a well-rounded development and system administration environment:
-
-## Installed packages and their purposes
-
-The playbook installs the following packages to provide a well-rounded development and system administration environment:
+The playbook installs the following packages to provide a well-rounded devops and system administration environment:
 
 * **Installed packages:**
   - `buildessential`
