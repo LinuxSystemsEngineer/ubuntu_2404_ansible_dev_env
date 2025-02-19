@@ -7,7 +7,8 @@ This project automates the setup of an Ubuntu 24.04 LTS system using Ansible. It
 - git
 - python3
 
-## Requirements
+---
+
 This document assumes you already have SSH keys installed and configured for your local host and remote client machines.
 
 If you need help installing or configuring SSH keys, please refer to [ssh_key_guide](https://github.com/LinuxSystemsEngineer/ssh_key_guide).
