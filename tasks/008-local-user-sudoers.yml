@@ -1,11 +1,11 @@
 ---
-- name: Ensure /etc/sudoers.d/superadmin file is present with specific contents
+- name: Ensure /etc/sudoers.d/local_account_name file is present with specific contents
   become: true
   ansible.builtin.copy:
-    dest: /etc/sudoers.d/superadmin
+    dest: /etc/sudoers.d/local_account_name
     content: |
       # SUDO RULES FOR LOCAL USER
-      superadmin ALL=(ALL) NOPASSWD:ALL
+      local_account_name ALL=(ALL) NOPASSWD:ALL
     owner: root
     group: root
     mode: '0644'
@@ -13,7 +13,7 @@
 - name: Source .bashrc file for current user
   become: true
   ansible.builtin.shell: |
-    bash -l -c "source /home/superadmin/.bashrc"
+    bash -l -c "source /home/local_account_name/.bashrc"
   args:
     executable: /bin/bash
   changed_when: false
